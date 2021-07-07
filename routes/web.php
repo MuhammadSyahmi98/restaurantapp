@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/category/create', [CategoryController::class, 'create']);
+
+Route::post('/category/create', [CategoryController::class, 'store'])->name('category-store');
+
+Route::get('/category', [CategoryController::class, 'index'])->name('category-index');
+
+Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category-edit');
+
+
+Route::put('/category/{id}', [CategoryController::class, 'update'])->name('category-update');
+Route::delete('/category/{id}', [CategoryController::class, 'destroy'])->name('category-destroy');
