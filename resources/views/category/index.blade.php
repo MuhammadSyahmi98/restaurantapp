@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row jsutify-content-center">
+    <div class="row justify-content-center">
         <div class="col-md-8">
             @if (session('success'))
                 <p class="alert alert-success">
@@ -11,7 +11,13 @@
             @endif
       
             <div class="card">
-                <div class="card-header">List of Food Category</div>
+                <div class="card-header">List of Food Category
+                <span class="float-right">
+                        <a href="{{route('category-create')}}">
+                            <button class="btn btn-outline-secondary">Add Category</button>
+                        </a>
+                    </span>
+                </div>
                     <div class="card-body">
                     <table class="table table-striped table-hover">
                         <thead>
